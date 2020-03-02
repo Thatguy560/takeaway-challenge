@@ -11,18 +11,12 @@ describe Menu do
   
   it "prints a list of dishes with their prices." do
     printed_menu = "Fish £5.00, Chips £3.00"
-    expect(subject.print).to eq(printed_menu)
+    expect(menu.print).to eq(printed_menu)
   end
 
-# I would like to be able to select some number 
-# of several available dishes
-
-  it "allows you to select a number of dishes with their prices" do
-    expect(subject).to eq
-    
+  it "tells if a dish is on the menu" do
+    expect(menu.has_dish?(:Fish)).to be true 
   end
-
-
 
 
 end 
