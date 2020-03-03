@@ -11,6 +11,7 @@ let(:dishes) do { Fish: 3, Chips: 2 } end # Creates a new hash object
 before do
   allow(menu).to receive(:has_dish?).with(:Fish).and_return(true)
   allow(menu).to receive(:has_dish?).with(:Chips).and_return(true)
+  #Allows our 
 end
 
 it "selects several avaliable dishes from the menu" do 
@@ -20,7 +21,7 @@ it "selects several avaliable dishes from the menu" do
   end
 
   context "does not allow items to be added that are not on the menu" do
-  it "raises No Dish Error" do
+  it "raises NoDishError" do
     allow(menu).to receive(:has_dish?).with(:Steak).and_return(false)
     expect { subject.add(:Steak, 2) }.to raise_error NoDishError, "Steak isn't on the menu."
   end
